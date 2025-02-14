@@ -8,9 +8,10 @@
 // Execute `rustlings hint lifetimes1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+// 生命周期注解，下面的生命周期告诉我们，对于某个生命周期'a，函数的两个参数至少活得跟'a一样长，返回值也是至少活得跟'a一样长。
+//就是说，返回值的生命周期和传入参数里较短的参数的生命周期相同
 
-fn longest(x: &str, y: &str) -> &str {
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
     } else {
